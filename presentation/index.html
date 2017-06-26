@@ -4,14 +4,12 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>IT Trends | R and Data Science</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
-
+		<link rel="stylesheet" href="css/theme/night.css">
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
-
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -24,8 +22,339 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section style="text-align: left;" data-background="img/bg.png">
+					<h2>R for Data Science</h2>
+					<p>Joma Minoza</p>
+				</section>
+				<section>
+					<h3>What is Data Science?</h3>
+				</section>
+				<section>
+					<section>
+						<h3>Definition</h3>
+					</section>
+					<section>
+						<h4>
+							Data science, also known as data-driven science, is an interdisciplinary field about scientific methods, processes, and systems to extract knowledge or insights from data in various forms, either structured or unstructured, similar to data mining. - Wikipedia
+						</h4>
+					</section>
+					<section>
+						<h4>Data Scientist is the Sexiest Job of the 21st Century - Harvard Business Review</h4>
+					</section>
+					<section>
+						<p class="fragment fade-up">Pan-stalk kay crush: Sentiment and Behavioral Analysis</p>						
+						<p class="fragment fade-up">May pag asa ba ako kay crush? using Logistic Regression</p>	
+						<p class="fragment fade-up">Time Series Analysis of Pag momove on ng isang tao</p>						
+						<p class="fragment fade-up">That's why Data Science is hart hart</p>	
+					</section>
+				</section>	
+				<section>
+					<section>
+						<h3>
+							Data Science in relation our field
+						</h3>
+					</section>
+					<section>
+						<h3>Bayes Theorem</h3>
+					</section>
+					<section>
+						<h3>Operation Research</h3>
+					</section>
+					<section>
+						<h3>Graph Theory</h3>
+					</section>
+					<section>
+						<h3>Information Technology</h3>
+						<p class="fragment grow">JavaScript</p>	
+						<p class="fragment grow">Programming Languages (C,.Net,PHP)</p>
+						<p class="fragment grow">Databases (MySQL, PostgreSQL, Access, MSSQL, NoSQL)</p>		
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>So, lets proceed to with R ...</h3>					
+					</section>
+					<section>
+						<h4>R is an open source programming language and software environment for statistical computing and graphics. The R language is widely used among statisticians and data miners for developing statistical software and data analysis. - Wikipedia</h4>
+					</section>
+					<section>
+						<h3>It is said that R is made by Statisticians, for Statisticians.</h3>
+					</section>
+					<section>
+						<h1>Let's start!</h1>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Variables</h2>					
+					</section>
+					<section>
+						<h3>Variables in R are case sensitives</h3>
+					</section>
+					<section>
+						<h3>Assigning Value</h3>
+						<pre><code class="hljs" data-trim contenteditable>
+> a <- 1
+> b = 2
+> b -> c
+						</code></pre>								
+					</section>					
+				</section>
+				<section>
+					<section>
+						<h2>Data Types</h2>					
+					</section>
+					<section>
+						<table>
+							<thead>
+								<tr>
+									<th>Data Type</th>
+									<th>Description</th>
+									<th>Example</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Numeric</td>
+									<td>Store floating point values</td>
+									<td>12345</td>
+								</tr>
+								<tr>
+									<td>String</td>
+									<td>Sequences of characters</td>
+									<td>"I love programming"</td>
+								</tr>
+								<tr>
+									<td>Boolean</td>
+									<td>Values corresponding to True or False</td>
+									<td>T or F</td>
+								</tr>
+							</tbody>
+						</table>									
+					</section>
+					<section>
+						<h2>Operators</h2>
+					</section>
+					<section>
+						<table>
+							<thead>
+								<tr>
+									<th>Operator</th>
+									<th>Description</th>
+									<th>Example</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>+</td>
+									<td>Addition</td>
+									<td>123+45</td>
+								</tr>
+								<tr>
+									<td>-</td>
+									<td>Subtraction</td>
+									<td>567-89</td>
+								</tr>
+								<tr>
+									<td>*</td>
+									<td>Multiplication</td>
+									<td>2*5</td>
+								</tr>
+								<tr>
+									<td>/</td>
+									<td>Division</td>
+									<td>125/5</td>
+								</tr>
+								<tr>
+									<td>^</td>
+									<td>Exponent</td>
+									<td>27^3</td>
+								</tr>
+								<tr>
+									<td>%%</td>
+									<td>Modulus</td>
+									<td>5 %% 3</td>
+								</tr>
+							</tbody>
+						</table>									
+					</section>
+					<section>
+						<h3>Special Data Types</h3>
+					</section>
+					<section>
+						<h3>Special Data Types</h3>	
+						<pre><code class="hljs" data-trim contenteditable>
+>NaN
+>NA
+>NULL
+						</code></pre>						
+					</section>
+
+					<section>
+						<h3>Special Data Types</h3>	
+						<pre><code class="hljs" data-trim contenteditable>
+bar<-90000^200
+						</code></pre>						
+					</section>
+					<section>
+						<h3>Special Data Types</h3>	
+						<pre><code class="hljs" data-trim contenteditable>
+Inf* -2
+						</code></pre>						
+					</section>
+					<section>
+						<h3>Special Data Types</h3>	
+						<pre><code class="hljs" data-trim contenteditable>
+-92/Inf
+92/Inf
+-92/-Inf
+92/-Inf
+						</code></pre>						
+					</section>
+					<section>
+						<h3>Special Data Types</h3>	
+						<pre><code class="hljs" data-trim contenteditable>
+-92/0
+92/0
+						</code></pre>						
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Some Math Functions</h3>
+					</section>
+					<section>
+					<pre><code class="hljs" data-trim contenteditable>
+# Logarithms 
+> log(x=144,base=12)
+> log(x=216,base=6)
+
+# Exponentials
+> exp(x=3)
+[1] 20.08554
+> log(x=20.17)
+[1] 3.004196
+					</code></pre>						
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Vectors</h3>
+					</section>
+					<section>
+					<h6>Vectors are series of data/numbers</h6>
+					<pre><code class="hljs" data-trim contenteditable>
+c(1,2,3,4,5) #to concatenate elements or sub-vectors
+> rep(1,10) # repeats the number 1, 10 times
+[1] 1 1 1 1 1 1 1 1 1 1
+</code></pre>
+<pre><code class="hljs" data-trim contenteditable>
+> seq(2,6) # sequence of integers between 2 and 6
+[1] 2 3 4 5 6 # equivalent to 2:6
+</code></pre>
+<pre><code class="hljs" data-trim contenteditable>
+> seq(4,20,by=4) # Every 4th integer between 4 and 20
+[1] 4 8 12 16 20
+</code></pre>
+					</section>
+					<section>
+					<h6>Vectors with Operators</h6>
+<pre><code class="hljs" data-trim contenteditable>
+> x <- c(2,0,0,4) # Creates vector with elements 2,0,0,4
+> y <- c(1,9,9,9)
+> x + y # Sums elements of two vectors
+[1] 3 9 9 13
+</code></pre>
+<pre><code class="hljs" data-trim contenteditable>
+> x * 4 # Multiplies elements
+[1] 8  0  4 28
+</code></pre>
+<pre><code class="hljs" data-trim contenteditable>
+> sqrt(x) # Function applies to each element
+[1] 1.4142 0.0 1.0 2.6457 # Returns vector
+					</code></pre>					
+					<pre><code class="hljs" data-trim contenteditable>
+vector <- c(1,2,3,4,5)
+length(vector)
+					</code></pre>						
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Matrix</h3>
+					</section>
+					<section>
+						<h3>Matrix and Data Frames</h3>
+					<pre><code class="hljs" data-trim contenteditable>
+> A <-matrix(data=c(1,2,3,4),nrow=2, ncol = 2)
+> A
+> # you can fill a matrix by row or column using the byrow=true|false
+> A <- matrix(data = c(1,2,3,4,5,6),nrow = 2, ncol = 3,byrow = FALSE)
+> A
+> B <- matrix(data = c(1,2,3,4,5,6),nrow = 2, ncol = 3,byrow = TRUE)
+> B
+					</code></pre>						
+					</section>
+					<section>
+						<h3>Matrix Manipulation</h3>
+					</section>
+					<section>
+						<h5>Matrix Manipulation</h5>
+						<pre><code class="hljs" data-trim contenteditable>
+A <- matrix(data = c(1,2,3,4,5,6,7,8),nrow = 2, ncol = 4,byrow = FALSE)
+nrow(A)
+ncol(A)
+						</code></pre>
+					</section>
+					<section>
+						<h5>Matrix Manipulation</h5>
+						<pre><code class="hljs" data-trim contenteditable>
+A <- matrix(data = c(1,2,3,4,5,6,7,8),nrow = 2, ncol = 4,byrow = FALSE)
+A
+A[1,2] # A[row,column]
+A[,2] # return all rows of Column 2
+A[1,] # return all columns of Row 1
+						</code></pre>
+					</section>
+					<section>
+						<h5>Condition Subsetting of Matrix</h5>
+<pre><code class="hljs" data-trim contenteditable>						
+> C <-  matrix(data = 1:100,nrow = 5, ncol = 20,byrow = TRUE)
+     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13] [,14] [,15] [,16] [,17] [,18] [,19] [,20]
+[1,]    1    2    3    4    5    6    7    8    9    10    11    12    13    14    15    16    17    18    19    20
+[2,]   21   22   23   24   25   26   27   28   29    30    31    32    33    34    35    36    37    38    39    40
+[3,]   41   42   43   44   45   46   47   48   49    50    51    52    53    54    55    56    57    58    59    60
+[4,]   61   62   63   64   65   66   67   68   69    70    71    72    73    74    75    76    77    78    79    80
+[5,]   81   82   83   84   85   86   87   88   89    90    91    92    93    94    95    96    97    98    99   100
+> C[1,1:20][C[1,1:20]<10]
+[1] 1 2 3 4 5 6 7 8 9
+> C[,1][C[,1]>10]
+[1] 21 41 61 81
+</code></pre>
+					</section>					
+				</section>
+				<section>
+					<section>
+						<h3>Tasks:</h3>	
+<pre><code class="hljs" data-trim contenteditable>							
+1. Number of Iris with Sepal Length More than 4
+2. Sepal Length Vector + Sepal Width Vector
+3. Petal Width Vector multiply by 5
+4. Logarithm of Sepal Length Vector
+5. Square Root of Petal Width Vector less than 1.3	
+</code></pre>		
+					</section>
+
+				</section>
+				<section style="text-align: right;" data-background="img/bg.png">
+					<h3>Up Next:</h3>
+					<h5>
+					Review Linear Regression<br>
+					What is Logistic Regression?<br>
+					What is Machine Learning?<br>
+					Create Mini Artificial Intelligence<br>
+					</h5>
+				</section>
 			</div>
 		</div>
 
@@ -33,10 +362,11 @@
 		<script src="js/reveal.js"></script>
 
 		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				progress: true,
+				history: true,
+				transition: 'convex',
+
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
