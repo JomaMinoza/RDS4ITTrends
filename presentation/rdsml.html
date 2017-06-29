@@ -1,0 +1,359 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>IT Trends | R and Data Science</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section style="text-align: left;" data-background="img/bg.png">
+					<h2>R for Data Science</h2>
+					<h5>Analytics and Machine Learning</h5>
+					<h6>Joma Minoza</h6>
+				</section>
+				<section>
+					<h1>Let's Review First!</h1>
+				</section>
+				<section>
+					<section>
+						<h2>Variables</h2>					
+					</section>
+					<section>
+						<pre><code class="hljs" data-trim contenteditable>
+> a <- 1234
+> b = exp(x=a)
+> sqrt(x=b) -> c
+> boolean_vector <- c(T,T,T,T,F)
+						</code></pre>								
+					</section>	
+					<section>
+						<pre><code class="hljs" data-trim contenteditable>
+> iris
+> iris[1,1]
+> length(iris[,1][iris[,1]<5])
+> log(length(iris[,1][iris[,1]>5]))*iris[,2]
+						</code></pre>								
+					</section>										
+				</section>
+				<section>
+					<section>
+						<h3>Data Frame vs Matrix</h3>
+						<pre><code class="hljs" data-trim contenteditable>
+> A <- matrix(data = c(1,2,3,4,5,6,7,8),nrow = 4, ncol = 2,byrow = TRUE)
+> df <- data.frame(odd=seq(1,8,by=2),even=seq(2,8,by=2))
+> df$odd
+> df[1,]
+> df$sqrt <- sqrt(df$odd)
+> df$even[df$even>2]
+						</code></pre>			
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Setting Working Directory</h3>
+						<pre><code class="hljs" data-trim contenteditable>
+> getwd()
+> setwd("C://R/Files")
+> getwd()
+						</code></pre>					
+					</section>
+				</section>				
+				<section>
+					<section>
+						<h3>Loading of Data from CSV</h3>
+						<pre><code class="hljs" data-trim contenteditable>
+> data <- read.csv(file="C://R/Files/sample_data.csv", header=TRUE, sep=",")
+> setwd("C://R/Files")
+> data <- read.csv(file="sample_data.csv", header=TRUE, sep=",")
+						</code></pre>			
+					</section>
+				</section>		
+				<section>
+					<section>
+						<h3>If-Else</h3>
+						<pre><code class="hljs" data-trim contenteditable>
+> if(1%%2==1){
+    "Odd"
+} else{
+    "Even"
+}
+						</code></pre>							
+					</section>
+					<section>
+						<h3>Functions</h3>
+						<pre><code class="hljs" data-trim contenteditable>
+> even_checker <- function(n){
+    if(n%%2==1){
+       "Odd"
+    } else{
+       "Even"
+    }   
+}
+> even_checker(123)
+> even_checker(789)
+						</code></pre>							
+					</section>
+					<section>
+						<h3>Functions applying to Vector</h3>
+						<pre><code class="hljs" data-trim contenteditable>
+> vector <- seq(1:15)
+> even_checker <- function(n){
+    if(n%%2==1){
+       "Odd"
+    } else{
+       "Even"
+    }   
+}
+> mapply(even_checker,vector)
+						</code></pre>							
+					</section>					
+				</section>
+				<section>
+					<section>
+						<h2>Variables</h2>					
+					</section>
+					<section>
+						<section>
+							<h3>Variables</h3>	
+							<table>
+								<thead>
+									<tr>
+										<th>Variables</th>
+										<th>Example</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Nominal</td>
+										<td>Blue, Red, Green <br></td>
+									</tr>
+									<tr>
+										<td>Ordinal</td>
+										<td>1st, 2nd, 3rd</td>
+									</tr>
+									<tr>
+										<td>Ordered Categorical</td>
+										<td>High Medium Low<br></td>
+									</tr>
+									<tr>
+										<td>Binary</td>
+										<td>Yes or No, Passed or Failed, Positive or Negative</td>
+									</tr>
+								</tbody>
+							</table>									
+						</section>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Review Linear Regression</h2>
+					</section>
+					<section>
+						<h5>
+Linear regression is a type of supervised statistical learning approach that is useful for predicting a quantitative response Y. It can take the form of a single regression problem (where you use only a single predictor variable X) or a multiple regression (when more than one predictor is used in the model). It is one of the simplest and most straightforward approaches available and it is a starting point for more advanced modelling and predictive exercises.						
+						</h5>
+					</section>
+					<section>
+						<h3>Linear Regression</h3>
+						<img src="img/linear_regression.jpg">
+					</section>
+					<section>
+						<h3>Example</h3>
+					</section>
+					<section>
+						<pre><code class="hljs" data-trim contenteditable>
+> #install.packages('car','ggplot2','MASS')
+> library(car)
+> library(ggplot2) # for some nice looking graphs!
+> library(MASS)
+> head(Prestige,5)
+> data <- Prestige[,c(1:2)]
+> head(data,5)
+> plot(x=data$education,y=data$income)
+						</code></pre>
+					</section>
+					<section>
+						<pre><code class="hljs" data-trim contenteditable>
+> model = lm(income ~ education, data = data)
+> summary(model)
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  -2853.6     1407.0  -2.028   0.0452 *  
+education      898.8      127.0   7.075 2.08e-10 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 3483 on 100 degrees of freedom
+Multiple R-squared:  0.3336,	Adjusted R-squared:  0.3269 
+F-statistic: 50.06 on 1 and 100 DF,  p-value: 2.079e-10
+						</code></pre>
+					</section>					
+				</section>
+				<section>
+					<section>
+						<h2>What is Logistic Regression?</h2>
+					</section>
+					<section>
+						<h5>
+Logistic regression is a method for fitting a regression curve, y = f(x), when y is a categorical variable. The typical use of this model is predicting y given a set of predictors x. The predictors can be continuous, categorical or a mix of both.				
+						</h5>
+					</section>
+					<section>
+						<h3>Logistic Regression</h3>
+						<img src="img/log_regression.png">
+					</section>
+					<section>
+						<h3>Logistic Regression</h3>
+						<img src="img/log_regression_2.gif">
+					</section>				
+					<section>
+						<h3>Example</h3>
+					</section>
+					<section>
+						<h3>
+							Example
+						</h3>
+						<pre><code class="hljs" data-trim contenteditable>
+> learning <- data.frame(hours=c(0.50,0.75,1.00,1.25,1.50,1.75,1.75,2.00,2.25,2.50,2.75,3.00,3.25,3.50,4.00,4.25,4.50,4.75,5.00,5.50),pass=c(0,0,0,0,0,0,1,0,1,0,1,0,1,0,1,1,1,1,1,1))
+> model <- glm(formula = pass ~ hours, family = binomial(logit),
+data = learning)
+> summary(model)	
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)  
+(Intercept)  -4.0777     1.7610  -2.316   0.0206 *
+hours         1.5046     0.6287   2.393   0.0167 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 27.726  on 19  degrees of freedom
+Residual deviance: 16.060  on 18  degrees of freedom
+AIC: 20.06	
+
+#Less than 0.01 - have Significant Difference from the Null Model
+> 1 - pchisq(27-16, df=1)				
+						</code></pre>
+					</section>
+					<section>
+						<h3>
+							Example
+						</h3>
+						<pre><code class="hljs" data-trim contenteditable>
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)  
+(Intercept)  -4.0777     1.7610  -2.316   0.0206 *
+hours         1.5046     0.6287   2.393   0.0167 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> model$coefficients
+(Intercept)       hours 
+  -4.077713    1.504645 
+> model$coefficients[1]
+(Intercept) 
+  -4.077713 
+> model$coefficients[2]
+   hours 
+1.504645 
+> a <- model$coefficients[1]
+> b <- model$coefficients[2]
+						</code></pre>
+					</section>
+					<section>
+						<h3>
+							Example
+						</h3>
+						<img src="img/log_regression_2.gif">
+						<pre><code class="hljs" data-trim contenteditable>
+> a <- model$coefficients[1]
+> b <- model$coefficients[2]
+> exp(x=a+b*1)/(1+exp(x=a+b*1))
+						</code></pre>
+					</section>					
+				</section>
+				<section>
+					<section>
+						<h3>Some different algorithms used:</h3>
+						<p class="fragment grow">Linear Regression</p>	
+						<p class="fragment grow">Logistic Regression</p>	
+						<p class="fragment grow">Random Forest</p>	
+						<p class="fragment grow">Neural Networks</p>	
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>How Machine Learning works?</h2>
+					</section>
+					<section>
+						<h3>How Machine Learning works?</h3>
+						<img src="img/machine_learning_google.jpg">
+					</section>
+					<section>
+						<h3>How Machine Learning works?</h3>
+						<img src="img/ml_1_google.jpg">
+					</section>
+					<section>
+						<h3>How Machine Learning works?</h3>
+						<img src="img/ml_2_google.jpg">
+					</section>
+
+				<section>
+					<section>
+						<h3>Tasks:</h3>	
+<pre><code class="hljs" data-trim contenteditable>							
+Using data of grab
+1. Correlation between fare and pickup distance
+2. Create a vector/column named transaction
+If completed or cancelled, set to TRUE
+Otherwise, False
+3. Logistic Regression using transaction based on fare and pickup distance
+4. What is the probability of successfully transaction engagement of users by:
+a. having fare with 150 pesos with pickup distance of 0.5 km?
+b. having fare with 200 pesos with pickup distance of 0.90 km?
+b. having fare with 175 pesos with pickup distance of 1.31 km in Manila?
+</code></pre>		
+					</section>
+
+				</section>
+				<section style="text-align: right;" data-background="img/bg.png">
+					<h2>Thank you!</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+				progress: true,
+				history: true,
+				transition: 'convex',
+
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
